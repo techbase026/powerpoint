@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gli attacchi dal web - Cybersecurity</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="presentation-container">
+        <!-- Slide 1: Copertina -->
+        <div class="slide slide-1">
+            <div class="slide-content">
+                <div class="hero-image">
+                    <div class="binary-background"></div>
+                    <div class="silhouette"></div>
+                </div>
+                <h1 class="slide-title main-title">Gli attacchi dal web</h1>
+                <p class="slide-subtitle">Cybersecurity: comprendere e prevenire le minacce online</p>
+                <div class="slide-footer">
+                    <span class="slide-number">1</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Introduzione Sicurezza Informatica -->
+        <div class="slide slide-2">
+            <div class="slide-content">
+                <h2 class="slide-title">Sicurezza Informatica</h2>
+                <div class="intro-box">
+                    <p class="intro-definition"><strong>Cos'è:</strong> Insieme di pratiche per proteggere sistemi, reti, dispositivi e dati da attacchi digitali, accessi non autorizzati, danni e furti.</p>
+                </div>
+                
+                <div class="pillars-container">
+                    <div class="pillar pillar-1">
+                        <div class="pillar-icon">🔐</div>
+                        <h3>Confidenzialità</h3>
+                        <p>Proteggere i dati dall'accesso non autorizzato</p>
+                    </div>
+                    <div class="pillar pillar-2">
+                        <div class="pillar-icon">✓</div>
+                        <h3>Integrità</h3>
+                        <p>Assicurare che i dati non vengano alterati</p>
+                    </div>
+                    <div class="pillar pillar-3">
+                        <div class="pillar-icon">⚡</div>
+                        <h3>Disponibilità</h3>
+                        <p>Garantire accesso ai servizi quando necessario</p>
+                    </div>
+                </div>
+
+                <div class="current-issues">
+                    <h3>Perché è un problema attuale</h3>
+                    <ul>
+                        <li>Forte aumento della digitalizzazione → maggiore esposizione di dati sensibili</li>
+                        <li>Minacce sempre più sofisticate (ransomware, phishing)</li>
+                        <li>Danni economici elevati e blocco delle attività</li>
+                    </ul>
+                </div>
+
+                <div class="slide-footer">
+                    <span class="slide-number">2</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Virus Informatico -->
+        <div class="slide slide-3">
+            <div class="slide-content">
+                <h2 class="slide-title">Cos'è un virus informatico</h2>
+                
+                <div class="virus-definition">
+                    <p><strong>Definizione:</strong> Un software dannoso (malware) progettato per replicarsi e diffondersi, inserendosi in file o programmi eseguibili, agendo spesso all'insaputa dell'utente.</p>
+                </div>
+
+                <div class="virus-cycle">
+                    <h3>Ciclo di vita del virus</h3>
+                    <div class="cycle-diagram">
+                        <div class="cycle-step cycle-1">
+                            <span class="step-number">1</span>
+                            <h4>Infezione</h4>
+                            <p>Si nasconde in file .exe o documenti macro</p>
+                        </div>
+                        <div class="cycle-arrow">→</div>
+                        <div class="cycle-step cycle-2">
+                            <span class="step-number">2</span>
+                            <h4>Replica</h4>
+                            <p>Copia il codice in altri file</p>
+                        </div>
+                        <div class="cycle-arrow">→</div>
+                        <div class="cycle-step cycle-3">
+                            <span class="step-number">3</span>
+                            <h4>Payload</h4>
+                            <p>Cancella dati o ruba password</p>
+                        </div>
+                        <div class="cycle-arrow">→</div>
+                        <div class="cycle-step cycle-4">
+                            <span class="step-number">4</span>
+                            <h4>Diffusione</h4>
+                            <p>Via email, web, USB, software pirata</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="virus-types">
+                    <h3>Principali tipologie di virus</h3>
+                    <ul>
+                        <li><strong>Virus di file:</strong> Infettano programmi eseguibili</li>
+                        <li><strong>Virus macro:</strong> Colpiscono file Office</li>
+                        <li><strong>Virus del settore di avvio:</strong> Si attivano all'avvio del PC</li>
+                        <li><strong>Virus polimorfici:</strong> Cambiano codice per evitare l'antivirus</li>
+                    </ul>
+                </div>
+
+                <div class="slide-footer">
+                    <span class="slide-number">3</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Tipi di Malware -->
+        <div class="slide slide-4">
+            <div class="slide-content">
+                <h2 class="slide-title">Tipi di Malware</h2>
+                <p class="subtitle-text">Software dannosi progettati per infettare, danneggiare o spiare sistemi</p>
+
+                <div class="malware-types-grid">
+                    <div class="malware-card malware-virus">
+                        <div class="malware-icon">🦠</div>
+                        <h3>Virus</h3>
+                        <p>Si allegano a file/programmi legittimi e si replicano quando il file viene eseguito</p>
+                    </div>
+
+                    <div class="malware-card malware-worm">
+                        <div class="malware-icon">🐛</div>
+                        <h3>Worm</h3>
+                        <p>Autonomi, si propagano in rete sfruttando vulnerabilità senza bisogno di file ospiti</p>
+                    </div>
+
+                    <div class="malware-card malware-trojan">
+                        <div class="malware-icon">🎭</div>
+                        <h3>Trojan</h3>
+                        <p>Si presentano come software legittimi, installano backdoor per accesso remoto</p>
+                    </div>
+
+                    <div class="malware-card malware-ransomware">
+                        <div class="malware-icon">🔒</div>
+                        <h3>Ransomware</h3>
+                        <p>Cifrano i file della vittima e chiedono riscatto per il rilascio</p>
+                    </div>
+
+                    <div class="malware-card malware-spyware">
+                        <div class="malware-icon">👁️</div>
+                        <h3>Spyware/Keylogger</h3>
+                        <p>Spiano l'attività e registrano password e dati sensibili</p>
+                    </div>
+                </div>
+
+                <div class="slide-footer">
+                    <span class="slide-number">4</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Attacco Informatico -->
+        <div class="slide slide-5">
+            <div class="slide-content">
+                <h2 class="slide-title">Cos'è un attacco informatico?</h2>
+                
+                <div class="attack-definition">
+                    <p><strong>Definizione:</strong> Un accesso non autorizzato a sistemi o reti con lo scopo di rubare, modificare o distruggere dati.</p>
+                </div>
+
+                <div class="attack-details">
+                    <div class="detail-box">
+                        <h3>Chi attacca?</h3>
+                        <ul>
+                            <li>Singoli hacker</li>
+                            <li>Gruppi criminali</li>
+                            <li>Attori sponsorizzati da stati</li>
+                        </ul>
+                    </div>
+
+                    <div class="detail-box">
+                        <h3>Come attaccano?</h3>
+                        <ul>
+                            <li>Malware</li>
+                            <li>Social engineering</li>
+                            <li>Exploit di vulnerabilità</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="network-visualization">
+                    <div class="network-grid"></div>
+                    <div class="attack-indicator">⚠️ Attacco</div>
+                </div>
+
+                <p class="attack-conclusion">Per difendersi servono strategie di sicurezza <strong>multilivello</strong>: prevenire, individuare, contrastare.</p>
+
+                <div class="slide-footer">
+                    <span class="slide-number">5</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Obiettivi degli Attacchi -->
+        <div class="slide slide-6">
+            <div class="slide-content">
+                <h2 class="slide-title">Obiettivi degli attacchi</h2>
+                
+                <div class="objectives-grid">
+                    <div class="objective-card obj-1">
+                        <div class="obj-icon">💾</div>
+                        <h3>Furto di dati</h3>
+                        <p>Informazioni personali, finanziarie, aziendali</p>
+                    </div>
+
+                    <div class="objective-card obj-2">
+                        <div class="obj-icon">💰</div>
+                        <h3>Estorsione</h3>
+                        <p>Ransomware e richieste di riscatto</p>
+                    </div>
+
+                    <div class="objective-card obj-3">
+                        <div class="obj-icon">🕵️</div>
+                        <h3>Spionaggio</h3>
+                        <p>Monitoraggio di attività e comunicazioni</p>
+                    </div>
+
+                    <div class="objective-card obj-4">
+                        <div class="obj-icon">⚔️</div>
+                        <h3>Sabotaggio</h3>
+                        <p>Danno alle infrastrutture critiche</p>
+                    </div>
+
+                    <div class="objective-card obj-5">
+                        <div class="obj-icon">🎯</div>
+                        <h3>Disruption</h3>
+                        <p>Blocco di servizi e interruzione operativa</p>
+                    </div>
+
+                    <div class="objective-card obj-6">
+                        <div class="obj-icon">🪞</div>
+                        <h3>Frode d'identità</h3>
+                        <p>Uso illegale dei dati personali</p>
+                    </div>
+                </div>
+
+                <div class="slide-footer">
+                    <span class="slide-number">6</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Phishing -->
+        <div class="slide slide-7">
+            <div class="slide-content">
+                <h2 class="slide-title">Cos'è il Phishing?</h2>
+                
+                <div class="phishing-definition">
+                    <p><strong>Definizione:</strong> Un attacco basato sull'inganno dove l'attaccante finge di essere un soggetto affidabile (banca, social network, scuola, azienda) per spingere la vittima a fornire dati sensibili.</p>
+                </div>
+
+                <div class="phishing-origin">
+                    <h3>Origine del termine</h3>
+                    <p>Deriva da <strong>Fishing</strong> (pescare): l'attaccante lancia l'esca per "catturare" informazioni</p>
+                    <div class="fishing-metaphor">
+                        <div class="fishing-hook">🎣</div>
+                        <div class="fishing-text">L'esca: email, SMS, messaggio falso</div>
+                    </div>
+                </div>
+
+                <div class="slide-footer">
+                    <span class="slide-number">7</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Metodi di Phishing -->
+        <div class="slide slide-8">
+            <div class="slide-content">
+                <h2 class="slide-title">Metodi di Phishing</h2>
+                <p class="subtitle-text">I più comuni avvengono tramite:</p>
+
+                <div class="phishing-methods">
+                    <div class="method-card method-email">
+                        <div class="method-icon">📧</div>
+                        <h3>Email</h3>
+                        <p>Imitano comunicazioni ufficiali di banca, Amazon, PayPal</p>
+                    </div>
+
+                    <div class="method-card method-sms">
+                        <div class="method-icon">📱</div>
+                        <h3>SMS</h3>
+                        <p>Link urgenti o minacce per spingere l'azione immediata</p>
+                    </div>
+
+                    <div class="method-card method-social">
+                        <div class="method-icon">💬</div>
+                        <h3>Social Media</h3>
+                        <p>Messaggi privati da account falsi con richieste di dati</p>
+                    </div>
+                </div>
+
+                <div class="phishing-characteristics">
+                    <h3>Caratteristiche comuni</h3>
+                    <div class="char-grid">
+                        <div class="char-item">
+                            <span class="char-icon">⏰</span>
+                            <p><strong>Urgenza:</strong> "Account bloccato", "Accesso sospetto"</p>
+                        </div>
+                        <div class="char-item">
+                            <span class="char-icon">🎨</span>
+                            <p><strong>Grafica:</strong> Loghi e design realistici copiati</p>
+                        </div>
+                        <div class="char-item">
+                            <span class="char-icon">📨</span>
+                            <p><strong>Mittente:</strong> Indirizzo apparentemente reale</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide-footer">
+                    <span class="slide-number">8</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Link Malevoli -->
+        <div class="slide slide-9">
+            <div class="slide-content">
+                <h2 class="slide-title">Link Malevoli</h2>
+                
+                <div class="link-explanation">
+                    <p>Un metodo comune è inviare <strong>link che portano a siti falsi</strong>, copiati quasi identicamente all'originale (stessa grafica, colori, logo).</p>
+                </div>
+
+                <div class="url-comparison">
+                    <h3>Confronto URL corretto vs falso</h3>
+                    <div class="url-example correct">
+                        <span class="url-label">✅ Corretto:</span>
+                        <code>https://www.paypal.com/login</code>
+                    </div>
+
+                    <div class="url-example wrong">
+                        <span class="url-label">❌ Falso:</span>
+                        <code>https://www.paypa<span class="url-error">I</span>.com/login</code>
+                        <p class="error-hint">Nota la differenza: "I" al posto di "l"</p>
+                    </div>
+                </div>
+
+                <div class="malicious-consequences">
+                    <h3>Cosa succede?</h3>
+                    <p>Inserendo i dati sul sito falso, li si inviano direttamente agli attaccanti che potranno:</p>
+                    <ul>
+                        <li>Accedere agli account</li>
+                        <li>Rubare denaro</li>
+                        <li>Rubare l'identità digitale</li>
+                        <li>Vendere i dati online</li>
+                    </ul>
+                </div>
+
+                <div class="slide-footer">
+                    <span class="slide-number">9</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Furto di Credenziali -->
+        <div class="slide slide-10">
+            <div class="slide-content">
+                <h2 class="slide-title">Furto di Credenziali</h2>
+                
+                <div class="credentials-container">
+                    <div class="stolen-data">
+                        <h3>Cosa viene rubato?</h3>
+                        <div class="data-list">
+                            <div class="data-item">
+                                <span class="data-icon">👤</span>
+                                <p>Username e password</p>
+                            </div>
+                            <div class="data-item">
+                                <span class="data-icon">📧</span>
+                                <p>Indirizzi email</p>
+                            </div>
+                            <div class="data-item">
+                                <span class="data-icon">💳</span>
+                                <p>Dati bancari</p>
+                            </div>
+                            <div class="data-item">
+                                <span class="data-icon">🔐</span>
+                                <p>Codici di accesso</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="crime-flow">
+                        <h3>Usi criminali successivi</h3>
+                        <div class="flow-diagram">
+                            <div class="flow-box">
+                                <span>Credenziali rubate</span>
+                            </div>
+                            <div class="flow-arrow">⬇️</div>
+                            <div class="flow-box">
+                                <span>Accesso agli account</span>
+                            </div>
+                            <div class="flow-arrow">⬇️</div>
+                            <div class="flow-box">
+                                <span>Furti finanziari e identità</span>
+                            </div>
+                            <div class="flow-arrow">⬇️</div>
+                            <div class="flow-box">
+                                <span>Vendita dati nel dark web</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide-footer">
+                    <span class="slide-number">10</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Conclusione -->
+        <div class="slide slide-11">
+            <div class="slide-content">
+                <h2 class="slide-title">Prevenire è meglio che curare</h2>
+                
+                <div class="prevention-message">
+                    <p class="main-message">L'importanza della consapevolezza e della prevenzione</p>
+                </div>
+
+                <div class="prevention-tips">
+                    <div class="tip-card tip-1">
+                        <div class="tip-number">1</div>
+                        <h3>Antivirus aggiornati</h3>
+                        <p>Mantieni sempre il software antivirus e il sistema operativo aggiornati</p>
+                    </div>
+
+                    <div class="tip-card tip-2">
+                        <div class="tip-number">2</div>
+                        <h3>Verifica gli URL</h3>
+                        <p>Controlla sempre l'indirizzo della barra di indirizzo prima di inserire dati</p>
+                    </div>
+
+                    <div class="tip-card tip-3">
+                        <div class="tip-number">3</div>
+                        <h3>Autenticazione a Due Fattori</h3>
+                        <p>Attiva 2FA su tutti i servizi importanti per un livello di sicurezza aggiunto</p>
+                    </div>
+
+                    <div class="tip-card tip-4">
+                        <div class="tip-number">4</div>
+                        <h3>Non cliccare link sospetti</h3>
+                        <p>Sii scettico e verifica sempre l'origine di link e allegati ricevuti</p>
+                    </div>
+                </div>
+
+                <div class="closing-statement">
+                    <p><strong>Ricorda:</strong> La sicurezza informatica è responsabilità di tutti. Sii consapevole, sii prudente, sii sicuro.</p>
+                </div>
+
+                <div class="slide-footer">
+                    <span class="slide-number">11</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controlli di navigazione -->
+    <div class="controls">
+        <button class="nav-btn prev-btn" id="prevBtn">← Indietro</button>
+        <span class="slide-counter"><span id="currentSlide">1</span> / <span id="totalSlides">11</span></span>
+        <button class="nav-btn next-btn" id="nextBtn">Avanti →</button>
+    </div>
+
+    <!-- Indicatori slide -->
+    <div class="slide-indicators">
+        <div class="indicator active" id="indicator-1"></div>
+        <div class="indicator" id="indicator-2"></div>
+        <div class="indicator" id="indicator-3"></div>
+        <div class="indicator" id="indicator-4"></div>
+        <div class="indicator" id="indicator-5"></div>
+        <div class="indicator" id="indicator-6"></div>
+        <div class="indicator" id="indicator-7"></div>
+        <div class="indicator" id="indicator-8"></div>
+        <div class="indicator" id="indicator-9"></div>
+        <div class="indicator" id="indicator-10"></div>
+        <div class="indicator" id="indicator-11"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

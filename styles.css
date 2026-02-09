@@ -1,0 +1,1147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-dark: #0a0e27;
+    --secondary-dark: #1a1f3a;
+    --accent-cyan: #00d9ff;
+    --accent-violet: #b100ff;
+    --accent-green: #39ff14;
+    --text-light: #e0e6ff;
+    --text-muted: #a0aac4;
+    --border-color: #1f2847;
+    --transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 100%);
+    color: var(--text-light);
+    background-attachment: fixed;
+}
+
+.presentation-container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ==================== SLIDE BASE STYLES ==================== */
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+    padding: 60px;
+    overflow-y: auto;
+}
+
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.slide-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 40px 0;
+}
+
+/* ==================== SLIDE TRANSITIONS ==================== */
+
+.slide.active .slide-title,
+.slide.active .slide-subtitle,
+.slide.active .slide-content > *:not(.slide-footer) {
+    animation: slideInUp 0.8s ease forwards;
+}
+
+.slide.active .slide-title {
+    animation-delay: 0.1s;
+}
+
+.slide.active .slide-content > *:not(.slide-footer):nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.slide.active .slide-content > *:not(.slide-footer):nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.slide.active .slide-content > *:not(.slide-footer):nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.slide.active .slide-content > *:not(.slide-footer):nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes glitchEffect {
+    0%, 100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translateX(2px);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.6;
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 10px var(--accent-cyan), 0 0 20px var(--accent-cyan);
+    }
+    50% {
+        text-shadow: 0 0 20px var(--accent-cyan), 0 0 40px var(--accent-cyan);
+    }
+}
+
+/* ==================== TYPOGRAPHY ==================== */
+
+.slide-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--text-light);
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+    background: linear-gradient(135deg, var(--text-light) 0%, var(--accent-cyan) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.slide-subtitle {
+    font-size: 1.5rem;
+    color: var(--accent-cyan);
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.subtitle-text {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+h3 {
+    font-size: 1.3rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+strong {
+    color: var(--accent-cyan);
+    font-weight: 600;
+}
+
+ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+ul li {
+    padding-left: 25px;
+    margin-bottom: 12px;
+    position: relative;
+}
+
+ul li:before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--accent-green);
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+code {
+    background: rgba(0, 217, 255, 0.1);
+    color: var(--accent-green);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.95rem;
+    border: 1px solid var(--accent-cyan);
+}
+
+/* ==================== SLIDE 1: COPERTINA ==================== */
+
+.slide-1 {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, #0f1535 50%, var(--secondary-dark) 100%);
+}
+
+.slide-1 .slide-content {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-image {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin-bottom: 50px;
+    opacity: 0;
+    animation: fadeInScale 1s ease 0.3s forwards;
+}
+
+.binary-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, var(--accent-cyan) 0%, transparent 70%);
+    opacity: 0.2;
+    border-radius: 50%;
+    animation: pulse 3s ease-in-out infinite;
+}
+
+.silhouette {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 80%;
+    background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-violet) 100%);
+    clip-path: polygon(20% 0%, 80% 0%, 100% 50%, 80% 100%, 20% 100%, 0% 50%);
+    opacity: 0.3;
+    transform: translate(-50%, -50%);
+    filter: blur(40px);
+}
+
+.main-title {
+    font-size: 4.5rem;
+    margin-bottom: 20px;
+    animation: glow 2s ease-in-out infinite;
+    letter-spacing: 2px;
+}
+
+/* ==================== SLIDE 2: INTRODUZIONE ==================== */
+
+.intro-box {
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.05) 0%, rgba(177, 0, 255, 0.05) 100%);
+    border: 2px solid var(--accent-cyan);
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 50px;
+    backdrop-filter: blur(10px);
+}
+
+.intro-definition {
+    font-size: 1.15rem;
+    line-height: 2;
+}
+
+.pillars-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.pillar {
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.08) 0%, rgba(177, 0, 255, 0.08) 100%);
+    border: 2px solid var(--accent-violet);
+    border-radius: 8px;
+    padding: 30px 25px;
+    text-align: center;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.pillar:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 10px 40px rgba(0, 217, 255, 0.2);
+}
+
+.pillar-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    display: inline-block;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.pillar h3 {
+    margin-top: 15px;
+    margin-bottom: 12px;
+}
+
+.pillar p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.current-issues {
+    background: rgba(57, 255, 20, 0.05);
+    border-left: 4px solid var(--accent-green);
+    padding: 25px;
+    border-radius: 4px;
+}
+
+.current-issues h3 {
+    color: var(--accent-green);
+    margin-top: 0;
+}
+
+/* ==================== SLIDE 3: VIRUS INFORMATICO ==================== */
+
+.virus-definition {
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.08) 0%, rgba(177, 0, 255, 0.08) 100%);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 40px;
+    font-size: 1.05rem;
+}
+
+.virus-cycle {
+    margin-bottom: 40px;
+}
+
+.cycle-diagram {
+    display: flex;
+    align-items: stretch;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 20px 0;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.cycle-step {
+    flex: 1;
+    min-width: 180px;
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.1) 0%, rgba(177, 0, 255, 0.1) 100%);
+    border: 2px solid var(--accent-cyan);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    transition: var(--transition);
+    position: relative;
+}
+
+.cycle-step:hover {
+    transform: scale(1.05);
+    border-color: var(--accent-green);
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.3);
+}
+
+.step-number {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-violet));
+    border-radius: 50%;
+    line-height: 40px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--primary-dark);
+}
+
+.cycle-step h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.cycle-step p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.cycle-arrow {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    color: var(--accent-green);
+    margin: 0 10px;
+    flex-shrink: 0;
+}
+
+.virus-types {
+    background: rgba(57, 255, 20, 0.05);
+    border-left: 4px solid var(--accent-green);
+    padding: 25px;
+    border-radius: 4px;
+}
+
+.virus-types h3 {
+    color: var(--accent-green);
+    margin-top: 0;
+}
+
+/* ==================== SLIDE 4: TIPI DI MALWARE ==================== */
+
+.malware-types-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.malware-card {
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.08) 0%, rgba(177, 0, 255, 0.08) 100%);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.malware-card:hover {
+    transform: translateY(-15px);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 20px 50px rgba(0, 217, 255, 0.2);
+}
+
+.malware-card.malware-virus:hover {
+    border-color: #ff0066;
+}
+
+.malware-card.malware-worm:hover {
+    border-color: #ff9500;
+}
+
+.malware-card.malware-trojan:hover {
+    border-color: var(--accent-violet);
+}
+
+.malware-card.malware-ransomware:hover {
+    border-color: #ff0000;
+}
+
+.malware-card.malware-spyware:hover {
+    border-color: var(--accent-green);
+}
+
+.malware-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    display: inline-block;
+    animation: pulse 2.5s ease-in-out infinite;
+}
+
+.malware-card h3 {
+    color: var(--accent-cyan);
+    margin-top: 0;
+}
+
+.malware-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* ==================== SLIDE 5: ATTACCO INFORMATICO ==================== */
+
+.attack-definition {
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.08) 0%, rgba(177, 0, 255, 0.08) 100%);
+    border: 2px solid var(--accent-cyan);
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 40px;
+    font-size: 1.05rem;
+}
+
+.attack-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.detail-box {
+    background: linear-gradient(135deg, rgba(57, 255, 20, 0.08) 0%, rgba(177, 0, 255, 0.08) 100%);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 25px;
+}
+
+.detail-box h3 {
+    color: var(--accent-green);
+    margin-top: 0;
+}
+
+.network-visualization {
+    position: relative;
+    height: 200px;
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.05) 0%, rgba(177, 0, 255, 0.05) 100%);
+    border: 2px dashed var(--accent-cyan);
+    border-radius: 8px;
+    margin-bottom: 30px;
+    overflow: hidden;
+}
+
+.network-grid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image:
+        linear-gradient(rgba(0, 217, 255, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 217, 255, 0.1) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: slideInUp 0.8s ease;
+}
+
+.attack-indicator {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5rem;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.attack-conclusion {
+    background: rgba(255, 150, 0, 0.1);
+    border-left: 4px solid #ff9500;
+    padding: 20px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+/* ==================== SLIDE 6: OBIETTIVI ==================== */
+
+.objectives-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.objective-card {
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.08) 0%, rgba(177, 0, 255, 0.08) 100%);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 25px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.objective-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 15px 40px rgba(0, 217, 255, 0.15);
+}
+
+.obj-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    display: inline-block;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.objective-card h3 {
+    color: var(--accent-cyan);
+    margin-top: 0;
+}
+
+.objective-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* ==================== SLIDE 7: PHISHING ==================== */
+
+.phishing-definition {
+    background: linear-gradient(135deg, rgba(255, 0, 102, 0.08) 0%, rgba(177, 0, 255, 0.08) 100%);
+    border: 2px solid #ff0066;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 40px;
+    font-size: 1.05rem;
+}
+
+.phishing-origin {
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.08) 0%, rgba(177, 0, 255, 0.08) 100%);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+}
+
+.phishing-origin h3 {
+    margin-top: 0;
+    color: var(--accent-cyan);
+}
+
+.fishing-metaphor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.fishing-hook {
+    font-size: 4rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.fishing-text {
+    font-size: 1.2rem;
+    color: var(--accent-cyan);
+    font-weight: 500;
+}
+
+/* ==================== SLIDE 8: METODI PHISHING ==================== */
+
+.phishing-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.method-card {
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.08) 0%, rgba(177, 0, 255, 0.08) 100%);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.method-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 15px 40px rgba(0, 217, 255, 0.15);
+}
+
+.method-icon {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    display: inline-block;
+    animation: pulse 2.5s ease-in-out infinite;
+}
+
+.method-card h3 {
+    color: var(--accent-cyan);
+    margin-top: 0;
+}
+
+.method-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.phishing-characteristics {
+    background: rgba(57, 255, 20, 0.05);
+    border-left: 4px solid var(--accent-green);
+    padding: 30px;
+    border-radius: 4px;
+}
+
+.phishing-characteristics h3 {
+    color: var(--accent-green);
+    margin-top: 0;
+}
+
+.char-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.char-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.char-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.char-item p {
+    font-size: 0.95rem;
+}
+
+/* ==================== SLIDE 9: LINK MALEVOLI ==================== */
+
+.link-explanation {
+    background: linear-gradient(135deg, rgba(255, 0, 102, 0.08) 0%, rgba(177, 0, 255, 0.08) 100%);
+    border: 2px solid #ff0066;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 40px;
+    font-size: 1.05rem;
+}
+
+.url-comparison {
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.05) 0%, rgba(177, 0, 255, 0.05) 100%);
+    border: 2px dashed var(--accent-cyan);
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 40px;
+}
+
+.url-comparison h3 {
+    margin-top: 0;
+    color: var(--accent-cyan);
+}
+
+.url-example {
+    background: var(--secondary-dark);
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: var(--transition);
+}
+
+.url-example.correct {
+    border-color: var(--accent-green);
+}
+
+.url-example.wrong {
+    border-color: #ff0066;
+}
+
+.url-example.wrong:hover {
+    background: rgba(255, 0, 102, 0.05);
+}
+
+.url-label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.url-example code {
+    display: block;
+    word-break: break-all;
+    font-size: 1rem;
+    padding: 0;
+    background: none;
+    border: none;
+}
+
+.url-error {
+    background: rgba(255, 0, 102, 0.3);
+    border: 2px solid #ff0066;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-weight: bold;
+    color: #ff0066;
+}
+
+.error-hint {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 8px;
+    font-style: italic;
+}
+
+.malicious-consequences {
+    background: rgba(255, 0, 0, 0.08);
+    border-left: 4px solid #ff0000;
+    padding: 25px;
+    border-radius: 4px;
+}
+
+.malicious-consequences h3 {
+    color: #ff0066;
+    margin-top: 0;
+}
+
+/* ==================== SLIDE 10: FURTO CREDENZIALI ==================== */
+
+.credentials-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.stolen-data {
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.08) 0%, rgba(177, 0, 255, 0.08) 100%);
+    border: 2px solid #ff0066;
+    border-radius: 8px;
+    padding: 25px;
+}
+
+.stolen-data h3 {
+    margin-top: 0;
+    color: #ff0066;
+}
+
+.data-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.data-item {
+    background: rgba(0, 217, 255, 0.1);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 15px;
+    text-align: center;
+}
+
+.data-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.data-item p {
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.crime-flow {
+    background: linear-gradient(135deg, rgba(57, 255, 20, 0.08) 0%, rgba(0, 217, 255, 0.08) 100%);
+    border: 2px solid var(--accent-green);
+    border-radius: 8px;
+    padding: 25px;
+}
+
+.crime-flow h3 {
+    margin-top: 0;
+    color: var(--accent-green);
+}
+
+.flow-diagram {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.flow-box {
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.15) 0%, rgba(177, 0, 255, 0.15) 100%);
+    border: 2px solid var(--accent-cyan);
+    border-radius: 6px;
+    padding: 15px;
+    text-align: center;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.flow-box:hover {
+    transform: scaleX(1.05);
+    border-color: var(--accent-green);
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.2);
+}
+
+.flow-arrow {
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--accent-cyan);
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* ==================== SLIDE 11: CONCLUSIONE ==================== */
+
+.prevention-message {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.main-message {
+    font-size: 2rem;
+    color: var(--accent-cyan);
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.prevention-tips {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.tip-card {
+    background: linear-gradient(135deg, rgba(0, 217, 255, 0.08) 0%, rgba(177, 0, 255, 0.08) 100%);
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.tip-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--accent-cyan);
+    box-shadow: 0 15px 40px rgba(0, 217, 255, 0.15);
+}
+
+.tip-number {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-violet));
+    border-radius: 50%;
+    line-height: 50px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: var(--primary-dark);
+    font-size: 1.5rem;
+}
+
+.tip-card h3 {
+    color: var(--accent-cyan);
+    margin-top: 0;
+}
+
+.tip-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.closing-statement {
+    background: linear-gradient(135deg, rgba(57, 255, 20, 0.08) 0%, rgba(0, 217, 255, 0.08) 100%);
+    border: 2px solid var(--accent-green);
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.closing-statement p {
+    margin: 0;
+    color: var(--accent-green);
+}
+
+/* ==================== SLIDE FOOTER ==================== */
+
+.slide-footer {
+    margin-top: auto;
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid var(--border-color);
+}
+
+.slide-number {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* ==================== CONTROLS ==================== */
+
+.controls {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    z-index: 1000;
+}
+
+.nav-btn {
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-violet));
+    color: var(--primary-dark);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.nav-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 217, 255, 0.5);
+}
+
+.nav-btn:active {
+    transform: scale(0.98);
+}
+
+.slide-counter {
+    color: var(--accent-cyan);
+    font-weight: 600;
+    font-size: 1rem;
+    min-width: 80px;
+    text-align: center;
+}
+
+/* ==================== SLIDE INDICATORS ==================== */
+
+.slide-indicators {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    gap: 10px;
+    z-index: 1000;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--border-color);
+    cursor: pointer;
+    transition: var(--transition);
+    border: 2px solid transparent;
+}
+
+.indicator:hover {
+    border-color: var(--accent-cyan);
+}
+
+.indicator.active {
+    background: linear-gradient(135deg, var(--accent-cyan), var(--accent-violet));
+    box-shadow: 0 0 15px rgba(0, 217, 255, 0.6);
+}
+
+/* ==================== RESPONSIVE ==================== */
+
+@media (max-width: 768px) {
+    .slide {
+        padding: 40px 20px;
+    }
+
+    .slide-title {
+        font-size: 2.5rem;
+    }
+
+    .slide-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .pillars-container {
+        grid-template-columns: 1fr;
+    }
+
+    .attack-details {
+        grid-template-columns: 1fr;
+    }
+
+    .credentials-container {
+        grid-template-columns: 1fr;
+    }
+
+    .controls {
+        flex-direction: column;
+        gap: 15px;
+        bottom: 20px;
+    }
+
+    .slide-indicators {
+        top: 10px;
+        right: 10px;
+        gap: 5px;
+    }
+
+    .indicator {
+        width: 8px;
+        height: 8px;
+    }
+
+    .hero-image {
+        width: 300px;
+        height: 300px;
+        margin-bottom: 30px;
+    }
+
+    .main-title {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .slide {
+        padding: 30px 15px;
+    }
+
+    .slide-title {
+        font-size: 2rem;
+    }
+
+    .slide-subtitle {
+        font-size: 1rem;
+    }
+
+    .malware-types-grid,
+    .objectives-grid,
+    .phishing-methods,
+    .prevention-tips {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-btn {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+
+    .slide-counter {
+        font-size: 0.9rem;
+    }
+}
